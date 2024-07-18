@@ -21,13 +21,15 @@ function setSlider() {
 
     indicator.querySelector('.number').innerHTML = '0' + (active + 1)
 }
-nextButton.onclick = () => {
+nextButton.onclick = () => {    
+    list.style.setProperty('--calculation', 1)
     active = active + 1 > lastPosition ? 0 : active + 1
     setSlider()
     items[active].classList.add('active')
 }
 
 prevButton.onclick = () => {
+    list.style.setProperty('--calculation', -1)
     active = active - 1 < firstPosition ? lastPosition : active - 1
     setSlider()
     items[active].classList.add('active')
